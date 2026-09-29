@@ -30,4 +30,9 @@ public class Corgi : MonoBehaviour
             corgiSpriteRenderer.flipX = true;
         }
     }
+
+    public Vector3 GetPosition()
+    {
+        return transform.position;
+    }
 }
