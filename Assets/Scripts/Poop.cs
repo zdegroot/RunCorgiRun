@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Poop : MonoBehaviour
+public class Poop : TimedObject
 {
-    void Start()
+    public void Start()
     {
-        StartCoroutine(CountdownUntilDeath());
-    }
-
-    IEnumerator CountdownUntilDeath()
-    {
-        yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
+        secondsOnScreen = GameParameters.PoopSecondsOnScreen;
+        base.Start();
     }
 }
 
