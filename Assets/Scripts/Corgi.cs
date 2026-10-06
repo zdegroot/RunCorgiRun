@@ -19,6 +19,18 @@ public class Corgi : MonoBehaviour
         corgiSpriteRenderer.transform.position = SpriteTools.ConstrainToScreen(corgiSpriteRenderer);
     }
     
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Beer"))
+        {
+            print("beer is beer");
+        }
+        if (other.gameObject.CompareTag("Bone"))
+        {
+            print("bone is bone");
+        }
+    }
+    
     public void FaceCorrectDirection(Vector2 direction)
     {
         if (direction.x > 0)

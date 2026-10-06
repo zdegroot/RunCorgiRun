@@ -267,6 +267,8 @@ GameObject:
   - component: {fileID: 550520056}
   - component: {fileID: 550520055}
   - component: {fileID: 550520057}
+  - component: {fileID: 550520059}
+  - component: {fileID: 550520060}
   m_Layer: 0
   m_Name: Corgi
   m_TagString: Untagged
@@ -321,7 +323,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: d4d4b1b91f77bb14ca214d78c5727ae1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -361,6 +363,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f580aed3652645848b70fb70d316464f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Corgi
+--- !u!61 &550520059
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550520054}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.0011796206, y: 0.0023590922}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.98039687, y: 1.10071}
+  m_EdgeRadius: 0
+--- !u!50 &550520060
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550520054}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +554,7 @@ GameObject:
   - component: {fileID: 904734451}
   - component: {fileID: 904734452}
   - component: {fileID: 904734453}
+  - component: {fileID: 904734454}
   m_Layer: 0
   m_Name: Placers
   m_TagString: Untagged
@@ -557,6 +633,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PillPlacer
   TimedObjectPrefab: {fileID: 6835376588077896864, guid: ce52416ea8c686449aa210f002f6068d, type: 3}
+  MinimumSecondsToWait: 1
+  MaximumSecondsToWait: 3
+--- !u!114 &904734454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904734448}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75101438e08fd954bb9d41c06fca2b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaterPlacer
+  TimedObjectPrefab: {fileID: 4692643496247647781, guid: 61e0f4d5e0d636e4789becec9c6a1bf8, type: 3}
   MinimumSecondsToWait: 1
   MaximumSecondsToWait: 3
 --- !u!1 &1151837057
