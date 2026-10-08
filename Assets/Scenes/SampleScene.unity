@@ -363,6 +363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f580aed3652645848b70fb70d316464f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Corgi
+  DrunkSprite: {fileID: 21300000, guid: d22a428203983e549901efc772f53b79, type: 3}
+  SoberSprite: {fileID: 21300000, guid: d4d4b1b91f77bb14ca214d78c5727ae1, type: 3}
 --- !u!61 &550520059
 BoxCollider2D:
   m_ObjectHideFlags: 0
