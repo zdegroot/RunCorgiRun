@@ -395,7 +395,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -557,6 +557,7 @@ GameObject:
   - component: {fileID: 904734452}
   - component: {fileID: 904734453}
   - component: {fileID: 904734454}
+  - component: {fileID: 904734455}
   m_Layer: 0
   m_Name: Placers
   m_TagString: Untagged
@@ -650,6 +651,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterPlacer
   TimedObjectPrefab: {fileID: 4692643496247647781, guid: 61e0f4d5e0d636e4789becec9c6a1bf8, type: 3}
+  MinimumSecondsToWait: 1
+  MaximumSecondsToWait: 3
+--- !u!114 &904734455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904734448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e0130f99d96e04e89b43726a9dcdde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoonshinePlacer
+  TimedObjectPrefab: {fileID: 8987113931906061467, guid: c8250c2d11e18ca4d80112bf00c6215d, type: 3}
   MinimumSecondsToWait: 1
   MaximumSecondsToWait: 3
 --- !u!1 &1151837057

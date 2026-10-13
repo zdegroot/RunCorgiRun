@@ -22,6 +22,10 @@ public static class GameParameters
     public static float WaterBowlSecondsOnScreen = 0.5f;
     public static float WaterBowlMinimumSecondsToWait = 0.5f;
     public static float WaterBowlMaximumSecondsToWait = 1f;
-    
-    
+
+    public static float MoonshineSecondsOnScreen = 5f;
+    public static float MoonshineMinimumSecondsToWait = 0.5f;
+    public static float MoonshineMaximumSecondsToWait = 2f;
+
+
 }
