@@ -1,17 +1,26 @@
 using System.Collections;
 using UnityEditorInternal;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Corgi : MonoBehaviour
 {
     private SpriteRenderer corgiSpriteRenderer;
+
+    public UI UI;
+    
     private bool isDrunk = false;
     private bool isPlastered = false;
+
+    private Coroutine soberUpCoroutine;
     
     public Sprite DrunkSprite;
     public Sprite SoberSprite;
     
-
+    private int randomMoveCounter = 0;
+    private int lastRandomDirection = 0;
+    
+    
     public void Awake()
     {
         corgiSpriteRenderer = GetComponent<SpriteRenderer>();
@@ -27,7 +36,15 @@ public class Corgi : MonoBehaviour
 
     private void MoveRandomly()
     {
-        int direction = Random.Range(0, 4);
+        int direction = lastRandomDirection;
+        
+        if (randomMoveCounter == 0)
+        {
+            direction = Random.Range(0, 4);
+            lastRandomDirection = direction;
+            randomMoveCounter = Random.Range(60, 240);
+        }
+        
         switch (direction)
         {
             case 0:
@@ -42,6 +59,16 @@ public class Corgi : MonoBehaviour
             case 3:
                 Move(new Vector2(0, -1));
                 break;
+        }
+
+        randomMoveCounter = randomMoveCounter - 1;
+    }
+
+    public void MoveManually(Vector2 direction)
+    {
+        if (!isPlastered)
+        {
+            Move(direction);
         }
     }
 
@@ -98,8 +125,9 @@ public class Corgi : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Bone"))
         {
-            ScorePoint();
             Destroy(other.gameObject);
+            ScoreKeeper.AddPoint();
+            UI.SetScoreText(ScoreKeeper.GetScore());
         }
 
         if (other.gameObject.CompareTag("Pill"))
@@ -108,12 +136,7 @@ public class Corgi : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-
-    private void ScorePoint()
-    {
-        print("goal");
-    }
-
+    
     private void GetDrunk()
     {
         isDrunk = true;
@@ -122,7 +145,11 @@ public class Corgi : MonoBehaviour
 
     private void StartSoberingUp()
     {
-        StartCoroutine(CountdownUntilSober());
+        if (soberUpCoroutine != null)
+        {
+            StopCoroutine(soberUpCoroutine);
+        }
+        soberUpCoroutine = StartCoroutine(CountdownUntilSober());
     }
     
     IEnumerator CountdownUntilSober()
