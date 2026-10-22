@@ -612,7 +612,7 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
 --- !u!114 &597475354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1621,7 +1621,7 @@ GameObject:
   - component: {fileID: 1864251127}
   - component: {fileID: 1864251126}
   m_Layer: 5
-  m_Name: Button-Play
+  m_Name: Button-PlayAgain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1692,7 +1692,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1944598961}
         m_TargetAssemblyTypeName: Game, Assembly-CSharp
-        m_MethodName: OnStartButtonClicked
+        m_MethodName: OnPlayAgainButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1908,6 +1908,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Game
   GameTimer: {fileID: 318953079}
   UI: {fileID: 1237137805}
+  BonePlacer: {fileID: 904734452}
+  BeerPlacer: {fileID: 904734451}
+  MoonshinePlacer: {fileID: 904734455}
+  PillPlacer: {fileID: 904734453}
+  Corgi: {fileID: 550520057}
 --- !u!4 &1944598962
 Transform:
   m_ObjectHideFlags: 0

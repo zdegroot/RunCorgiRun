@@ -191,4 +191,13 @@ public class Corgi : MonoBehaviour
     {
         return transform.position;
     }
+
+    public void Reset()
+    {
+        corgiSpriteRenderer.transform.position = new Vector3(0, 0, 0);
+        corgiSpriteRenderer.flipX = false;
+        corgiSpriteRenderer.sprite = SoberSprite;
+        isDrunk = false;
+        isPlastered = false;
+    }
 }
