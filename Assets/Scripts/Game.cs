@@ -9,10 +9,12 @@ public class Game : MonoBehaviour
     public MoonshinePlacer MoonshinePlacer;
     public PillPlacer PillPlacer;
     public Corgi Corgi;
+    public Music Music;
 
     public void Start()
     {
         UI.HideGameOverScreen();
+        Music.PlayMenuMusic();
     }
 
     public void Update()
@@ -51,6 +53,7 @@ public class Game : MonoBehaviour
     {
         UI.ShowGameOverScreen();
         StopPlacers();
+        Music.PlayMenuMusic();
     }
 
     public void InitializeGame()
@@ -61,5 +64,6 @@ public class Game : MonoBehaviour
         Corgi.Reset();
         ScoreKeeper.ResetScore();
         UI.SetScoreText(ScoreKeeper.GetScore());
+        Music.PlayGameMusic();
     }
 }
