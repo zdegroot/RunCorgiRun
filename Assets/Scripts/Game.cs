@@ -10,6 +10,7 @@ public class Game : MonoBehaviour
     public PillPlacer PillPlacer;
     public Corgi Corgi;
     public Music Music;
+    public Sounds Sounds;
 
     public void Start()
     {
@@ -25,12 +26,14 @@ public class Game : MonoBehaviour
     public void OnStartButtonClicked()
     {
         InitializeGame();
+        Sounds.PlayPoopSound();
     }
 
     public void OnPlayAgainButtonClicked()
     {
         InitializeGame();
         UI.HideGameOverScreen();
+        Sounds.PlayPoopSound();
     }
 
     private void StartPlacers()
